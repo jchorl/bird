@@ -11,7 +11,7 @@ jobs:
     script:
     - ./build.sh
     env:
-    - ARCH=armv71
+    - ARCH=armv71 BUILDARCH=armv71
 deploy:
 - provider: script
   script: bash deploy.sh $DOCKER_USERNAME $DOCKER_PASSWORD
