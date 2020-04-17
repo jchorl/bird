@@ -6,10 +6,10 @@ language: shell
 jobs:
   include:
   - script:
-    - make image
+    - ./build.sh
   - arch: arm64
     script:
-    - make image
+    - ./build.sh
     env:
     - ARCH=armv71
 deploy:
