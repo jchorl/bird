@@ -9,7 +9,7 @@ set -x
 ###############################################################################
 
 # always are building on our current platform
-BUILDARCH=$(uname -m)
+BUILDARCH=armv71
 # get our target machine architecture
 ARCH=${ARCH:-${BUILDARCH}}
 
