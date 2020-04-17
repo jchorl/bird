@@ -910,6 +910,9 @@ EOF
     aarch64:Linux:*:*)
 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
 	exit ;;
+    armv71:Linux:*:*)
+	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+	exit ;;
     aarch64_be:Linux:*:*)
 	UNAME_MACHINE=aarch64_be
 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
@@ -932,6 +935,9 @@ EOF
 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
 	exit ;;
     aarch64:Linux:*:*)
+	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
+	exit ;;
+    armv71:Linux:*:*)
 	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
 	exit ;;
     aarch64_be:Linux:*:*)

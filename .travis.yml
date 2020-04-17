@@ -1,0 +1,24 @@
+arch:
+- amd64
+os: linux
+dist: bionic
+language: shell
+jobs:
+  include:
+  - script:
+    - make image
+  - arch: arm64
+    script:
+    - make image
+    env:
+    - ARCH=armv71
+deploy:
+- provider: script
+  script: bash deploy.sh $DOCKER_USERNAME $DOCKER_PASSWORD
+  on:
+    branch: master
+env:
+  global:
+  - CONTAINER_NAME=jchorl/bird
+  - DOCKER_USERNAME=jchorl
+  - secure: n3WWGzzBNCfCddwQwaJ8fF2jgbzqLGkyFvt3FnZfgaH/aOO3xkzxSjAkOrL++CSbTL7nJaSclbmGBsMRdPoallD73TwCCUi2FdJlZMYkKUDtxWEZla/1j6VQvPQuRQdaIPfdtW9vTZX34Rt9QvaOyFzWEH2hrn7IDeS5U5BZel6MdMeIZYteeSvRVb+YAw4cH0tPcThIgM0+p0Mzyv1F6RgHFdF9HlP462HB30OjaVdbT+uZSiB8vuIEbtW9tYzh0ZCI6SyjNLhh56jh75thrW3W4bFveq61a98xkHgYaKlBSbT/XKPZaDuhYDGACi35+IfJZxChdJps+LSXvpkpJJDwn3+cRcnUoranqc6HBFMfUKeqS0wwPWGPkRebzc4Hyz6sHK37+YeMNUreYIwuIsHr6YO0BncqlHcYMOeFGC0SKlVUtRTlfSbPJlXQ6XjrM3wrcz4EzlGK2fLPgS25bqmQxM8bYtbQXn5JrpocSizW8hK11j3tR3B+eXrMEWVWdBSxKOXyZZa/AO5ulzvkgIwglhgjw15mOZekb0kbLnK57/7vmXRb7R2XXZdu49G4cUWjmeJ5FpbNAVlpOJq71JJuh97v4YQMp/fEQHYEPxKniKtDYpy9P3cXP6+Y1txqxRlmtnFdevGoP99WJmoJxQs9IYOx/pMoBlI+5j8gXos=

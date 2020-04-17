@@ -14,6 +14,7 @@ for i in $TARGETARCH; do
 	dirarch=$i
 	[ "$dirarch" = "x86_64" ] && dirarch=amd64
 	[ "$dirarch" = "aarch64" ] && dirarch=arm64
+	[ "$dirarch" = "armv71" ] && dirarch=arm
 	[ "$dirarch" = "ppc64el" ] && dirarch=ppc64le
 	[ "$dirarch" = "powerpc64le" ] && dirarch=ppc64le
 
