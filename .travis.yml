@@ -7,7 +7,7 @@ jobs:
   include:
   - arch: arm64
     script:
-    - ./build.sh
+    - make -f Makefile.calico image
     env:
     - ARCH=armv71 BUILDARCH=armv71
 deploy:
