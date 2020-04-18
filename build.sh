@@ -63,7 +63,13 @@ case $ARCH in
 esac
 
 # get the right dockerfile
-DOCKERFILE=Dockerfile
+case $ARCH in
+	arm|armv71)
+		DOCKERFILE=Dockerfile.arm
+		;;
+	*)
+		DOCKERFILE=Dockerfile
+esac
 IMAGE=birdbuild-$ARCH
 if [ "$BUILDARCH" != "$TARGETARCH" ]; then
 	DOCKERFILE=Dockerfile-cross

@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM arm32v7/alpine:latest
 MAINTAINER Tom Denham <tom@projectcalico.org>
 
 RUN apk update
