@@ -5,8 +5,6 @@ dist: bionic
 language: shell
 jobs:
   include:
-  - script:
-    - ./build.sh
   - arch: arm64
     script:
     - ./build.sh
